@@ -1,16 +1,2 @@
-﻿  Application.cpp
-  imgui.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_impl_opengl3.cpp
-  imgui_impl_sdl2.cpp
-  imgui_tables.cpp
-  imgui_widgets.cpp
-  log.cpp
-  ModuleEditor.cpp
-  ModuleInput.cpp
-  ModuleOpenGL.cpp
-  ModuleWindow.cpp
-  Generating Code...
-  Main.cpp
-  Engine.vcxproj -> C:\Users\marcg\Desktop\Master\Assignatures\C++\_Code\2-Engine\Source_OLD\x64\Debug\Engine.exe
+﻿  ModuleProgram.cpp
+  Engine.vcxproj -> C:\Users\marcg\Desktop\Master\Assignatures\C++\Code\2-Engine\Source\x64\Debug\Engine.exe

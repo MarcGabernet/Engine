@@ -6,7 +6,6 @@
 
 ModuleOpenGL::ModuleOpenGL()
 {
-
 }
 
 // Destructor
@@ -46,9 +45,9 @@ bool ModuleOpenGL::Init()
 
 update_status ModuleOpenGL::PreUpdate()
 {
-	glViewport(0, 0, 800, 800);
+	glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 	SDL_GetWindowSize(App->window->window, nullptr, nullptr);
-	glClearColor(0.4f, 0.3f, 0.0f, 1.0f);
+	glClearColor(0.3f, 0.2f, 0.2f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	return UPDATE_CONTINUE;

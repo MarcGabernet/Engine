@@ -8,9 +8,10 @@
 class ModuleOpenGL;
 class ModuleWindow;
 class ModuleTextures;
+class ModuleRenderExercise;
 class ModuleEditor; 
 class ModuleInput;
-class ModuleRenderExercise;
+class ModuleProgram;
 
 class Application
 {
@@ -31,6 +32,8 @@ public:
 
     ModuleOpenGL* render = nullptr;
     ModuleWindow* window = nullptr;
+    ModuleProgram* program = nullptr;
+    ModuleRenderExercise* exercise = nullptr; 
     ModuleEditor* editor = nullptr;
     ModuleInput* input = nullptr;
 
