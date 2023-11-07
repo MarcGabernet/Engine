@@ -47,7 +47,6 @@ update_status ModuleProgram::PostUpdate()
 // Called before quitting
 bool ModuleProgram::CleanUp()
 {
-	LOG("Destroying program");
 	glDeleteProgram(program);
 
 	return true;
