@@ -110,14 +110,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="default_vertex.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="default_fragment.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Modules">
       <UniqueIdentifier>{85a284f0-88ad-4499-802f-0614bcdacf6a}</UniqueIdentifier>
     </Filter>
@@ -130,5 +122,13 @@
     <Filter Include="Main">
       <UniqueIdentifier>{9daff0b9-9a5f-4e58-bbe9-06586e3f9f52}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Game\default_fragment.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Game\default_vertex.glsl">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

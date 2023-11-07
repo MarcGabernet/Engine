@@ -22,7 +22,7 @@ public:
 
 private:
 	unsigned CreateTriangleVBO();
-	void RenderTriangle(unsigned vbo);
+	void RenderVBO(unsigned vbo, unsigned program);
 
 	unsigned vbo = 0;
 };

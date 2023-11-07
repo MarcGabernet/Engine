@@ -40,14 +40,15 @@ bool ModuleOpenGL::Init()
 	glEnable(GL_CULL_FACE); // Enable cull backward faces
 	glFrontFace(GL_CCW); // Front faces will be counter clockwise
 
+	glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
 	return true;
 }
 
 update_status ModuleOpenGL::PreUpdate()
 {
-	glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 	SDL_GetWindowSize(App->window->window, nullptr, nullptr);
-	glClearColor(0.3f, 0.2f, 0.2f, 1.0f);
+	glClearColor(0.8f, 0.4f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	return UPDATE_CONTINUE;

@@ -22,15 +22,13 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 
-	GLuint program;
-	GLuint vertex_id;
+	unsigned program = 0;
 
 private:
-	char* vertex_source;
-	char* fragment_source;
 
 	char* LoadShaderSource(const char* shader_file_name);
 	unsigned CompileShader(unsigned type, const char* source);
+	unsigned CreateProgram(unsigned vtx_shader, unsigned frg_shader);
 };
 
 #endif

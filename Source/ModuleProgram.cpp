@@ -15,19 +15,13 @@ ModuleProgram::~ModuleProgram()
 // Called before render is available
 bool ModuleProgram::Init()
 {
-	vertex_source = LoadShaderSource("default_vertex.glsl");
-	fragment_source = LoadShaderSource("default_fragment.glsl");
+	char* vrtx_source = LoadShaderSource("default_vertex.glsl");
+	char* frag_source = LoadShaderSource("default_fragment.glsl");
 
-	//vertex_id = CompileShader(GL_VERTEX_SHADER, vertex_source);
-	//GLuint fragment = CompileShader(GL_FRAGMENT_SHADER, fragment_source);
+	unsigned vertex_shader = CompileShader(GL_VERTEX_SHADER, vrtx_source);
+	unsigned fragment_shader = CompileShader(GL_FRAGMENT_SHADER, frag_source);
 
-	program = glCreateProgram();
-
-	//glAttachShader(program, vertex);
-	//glAttachShader(program, fragment);
-
-	//glLinkProgram(program);
-	//glLinkProgram(program);
+	program = CreateProgram(vertex_shader, fragment_shader);
 
 	return true;
 }
@@ -100,3 +94,28 @@ unsigned ModuleProgram::CompileShader(unsigned type, const char* source)
 	return shader_id;
 }
 
+unsigned ModuleProgram::CreateProgram(unsigned vtx_shader, unsigned frg_shader)
+{
+	unsigned program_id = glCreateProgram();
+	glAttachShader(program_id, vtx_shader);
+	glAttachShader(program_id, frg_shader);
+	glLinkProgram(program_id);
+	int res;
+	glGetProgramiv(program_id, GL_LINK_STATUS, &res);
+	if (res == GL_FALSE)
+	{
+		int len = 0;
+		glGetProgramiv(program_id, GL_INFO_LOG_LENGTH, &len);
+		if (len > 0)
+		{
+			int written = 0;
+			char* info = (char*)malloc(len);
+			glGetProgramInfoLog(program_id, len, &written, info);
+			LOG("Program Log Info: %s", info);
+			free(info);
+		}
+	}
+	glDeleteShader(vtx_shader);
+	glDeleteShader(frg_shader);
+	return program_id;
+}
